@@ -3,13 +3,14 @@ import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
 import { AppComponent } from './app.component';
 import { GbsuFtbLaiFormComponent } from './gbsu-ftb-lai-form/gbsu-ftb-lai-form.component';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { GbsuFtbLaiComponent } from './gbsu-ftb-lai/gbsu-ftb-lai.component';
 import { HomeComponent } from './home/home.component';
 import { RouterModule } from '@angular/router';
 import { NavBarComponent } from './nav-bar/nav-bar.component';
 import { FrontEndInstructionComponent } from './front-end-instruction/front-end-instruction.component';
 import { BackEndInstructionComponent } from './back-end-instruction/back-end-instruction.component';
+import {MatButtonModule} from '@angular/material/button';
 
 @NgModule({
   declarations: [
@@ -22,10 +23,11 @@ import { BackEndInstructionComponent } from './back-end-instruction/back-end-ins
     BackEndInstructionComponent
   ],
   imports: [
-    BrowserModule, ReactiveFormsModule, HttpClientModule,
+    BrowserModule, ReactiveFormsModule, HttpClientModule, FormsModule, MatButtonModule, 
     RouterModule.forRoot([
       { path: '', redirectTo: 'home', pathMatch: 'full' },
-      { path: 'home', component: HomeComponent }
+      { path: 'home', component: HomeComponent },
+      { path: 'gbsu-ftb-lai', component: GbsuFtbLaiComponent }
     ])
   ],
   providers: [

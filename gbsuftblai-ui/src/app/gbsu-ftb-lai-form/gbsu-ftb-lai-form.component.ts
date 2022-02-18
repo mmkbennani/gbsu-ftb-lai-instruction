@@ -3,10 +3,15 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-gbsu-ftb-lai-form',
-  templateUrl: './gbsu-ftb-lai-form.component.html'
+  templateUrl: './gbsu-ftb-lai-form.component.html',
+  styles: ["gbsu-ftb-lai-form.component.css"]
 })
 export class GbsuFtbLaiFormComponent implements OnInit {
 
+  @Output() submitNumberOutput = new EventEmitter<Number>();
+  
+  
+  numberToSubmit: Number;
 
   constructor() {
 
@@ -16,6 +21,7 @@ export class GbsuFtbLaiFormComponent implements OnInit {
   }
 
   submitNumber(): void {
+    this.submitNumberOutput.emit(this.numberToSubmit);
   }
 
 }

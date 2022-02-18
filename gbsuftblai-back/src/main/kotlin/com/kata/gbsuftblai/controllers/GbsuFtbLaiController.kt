@@ -10,7 +10,7 @@ class GbsuFtbLaiController(private val gbsuFtbLaiService: GbsuFtbLaiService) {
 
     @GetMapping("/{inputNumber}", produces = [MediaType.APPLICATION_JSON_VALUE])
     @CrossOrigin(origins = ["http://localhost:8080", "http://localhost:4200"])
-    fun convertNumber(@PathVariable(name = "inputNumber") inputNumber: Int): ResultDto {
+    fun convertNumber(@PathVariable(name = "inputNumber") inputNumber: String): ResultDto {
         return ResultDto(gbsuFtbLaiService.convertNumber(inputNumber))
     }
 
